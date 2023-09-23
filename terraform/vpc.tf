@@ -1,7 +1,3 @@
-module "module2" {
-  source = "./Modules/Vars"
-  
-}
 
 
 
