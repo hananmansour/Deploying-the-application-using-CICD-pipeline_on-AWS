@@ -11,8 +11,11 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
-                        sh "terraform init"
-                        sh "terraform apply --auto-approve"
+                        sh '''
+                        terraform init
+                        terraform plan
+                        terraform apply -auto-approve
+                        sh '''
                     }
                 }
             }
