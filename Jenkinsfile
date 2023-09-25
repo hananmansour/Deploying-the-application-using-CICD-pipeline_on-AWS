@@ -16,8 +16,8 @@ pipeline {
 
                          
                     sh   'echo DOCKERCREDENTIAL_PSW | docker login -u DOCKERCREDENTIAL_USR --password-stdin'
-                    sh   docker build -t 12345676700/fixed:v${BUILD_NUMBER} .
-                    sh  docker push 12345676700/fixed:v${BUILD_NUMBER}
+                    sh   'docker build -t 12345676700/fixed:v${BUILD_NUMBER} . '
+                    sh   'docker push 12345676700/fixed:v${BUILD_NUMBER}'
                                 
                         
                     }
