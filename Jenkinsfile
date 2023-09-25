@@ -4,14 +4,17 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+       PASSWORD = credentials('PASSWORD')
+        USERNAME = credentials('USERNAME')
+
         AWS_DEFAULT_REGION = "us-east-2"
+        
     }
     stages {
         stage("build docker file and push image to docker hub") {
             steps {
                 script {
                     dir('app') {
-                        withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 
                          sh '''
                          docker login -u ${USERNAME} -p ${PASSWORD}
