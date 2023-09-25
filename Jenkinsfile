@@ -4,6 +4,7 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        DOCKERCREDENTIAL = credentials('DockerHub')
         AWS_DEFAULT_REGION = "us-east-2"
         
     }
@@ -13,12 +14,12 @@ pipeline {
                 script {
                     dir('app') {
 
-                         sh '''
-                         docker login -u 12345676700
-                         docker build -t 12345676700/fixed:v${BUILD_NUMBER} .
-                         docker push 12345676700/fixed:v${BUILD_NUMBER}
+                         
+                    sh   'echo DOCKERCREDENTIAL_PSW | docker login -u DOCKERCREDENTIAL_USR --password-stdin'
+                    sh   docker build -t 12345676700/fixed:v${BUILD_NUMBER} .
+                    sh  docker push 12345676700/fixed:v${BUILD_NUMBER}
                                 
-                         '''
+                        
                     }
                 }
             }
