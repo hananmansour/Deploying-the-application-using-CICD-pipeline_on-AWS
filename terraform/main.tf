@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: MPL-2.0
 
 provider "aws" {
-  access_key = "AKIAV7ZGHJVSA4SHUH6N"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
   region = "us-east-2"
  }
 
