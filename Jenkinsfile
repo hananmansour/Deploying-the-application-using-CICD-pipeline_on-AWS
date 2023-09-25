@@ -4,9 +4,6 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-       PASSWORD = credentials('PASSWORD')
-        USERNAME = credentials('USERNAME')
-
         AWS_DEFAULT_REGION = "us-east-2"
         
     }
@@ -17,9 +14,9 @@ pipeline {
                     dir('app') {
 
                          sh '''
-                         docker login -u ${USERNAME} -p ${PASSWORD}
-                                docker build -t 12345676700/fixed:v${BUILD_NUMBER} .
-                                docker push 12345676700/fixed:v${BUILD_NUMBER}
+                         docker login -u 12345676700
+                         docker build -t 12345676700/fixed:v${BUILD_NUMBER} .
+                         docker push 12345676700/fixed:v${BUILD_NUMBER}
                                 
                          '''
                     }
