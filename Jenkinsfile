@@ -29,9 +29,9 @@ pipeline {
             steps {
                 script {
                     dir('kubernetes') {
-                        sh "aws eks update-kubeconfig --name myapp-eks-cluster"
-                        sh "kubectl apply -f nginx-deployment.yaml"
-                        sh "kubectl apply -f nginx-service.yaml"
+                        sh "aws eks update-kubeconfig --name fixed-eks"
+                        sh "kubectl apply -f Deployment.yaml"
+                        sh "kubectl apply -f Service.yaml"
                     }
                 }
             }
