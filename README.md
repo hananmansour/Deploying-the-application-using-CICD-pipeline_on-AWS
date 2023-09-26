@@ -11,3 +11,7 @@
 ![8](https://github.com/hananmansour/Deploying-the-application-using-CICD-pipeline_on-AWS/assets/66485038/b9886b9c-ec65-4003-8504-efb2c1ac6bfc)
 
 
+<h2>that is the solution</h2>
+![final_final](https://github.com/hananmansour/Deploying-the-application-using-CICD-pipeline_on-AWS/assets/66485038/3a35dff7-25f8-4e66-a849-750cd1713235)
+
+
