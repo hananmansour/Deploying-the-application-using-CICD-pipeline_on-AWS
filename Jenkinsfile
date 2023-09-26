@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     dir('kubernetes') {
-                        sh "aws eks update-kubeconfig --name fixed-eks"
+                        sh "aws eks update-kubeconfig --name education-eks-IZmwUUqx
                         sh "kubectl apply -f Deployment.yaml"
                         sh "kubectl apply -f Service.yaml"
                     }
